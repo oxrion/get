@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "dispatcher": {
+    "latest": "1.0.0",
+    "min_supported": "1.0.0"
+  },
+  "products": {
+    "licenser": {
+      "description": "",
+      "runtime": "native",
+      "version": "2.0.4",
+      "base": "https://github.com/oxrion/protection-releases/releases/download/v2.0.4",
+      "artifacts": {
+        "linux-x64": {
+          "file": "licenser-linux-x64",
+          "sha256": "73f80abc3cfd2b461aa6a6bae893be4e214d5b42e37aa1d201edb692851db491"
+        },
+        "macos-arm64": {
+          "file": "licenser-macos-arm64",
+          "sha256": "40ba2a705df95b73e6209242e31ae9ed042361690030db1248c577f0b650fc9f"
+        },
+        "macos-x64": {
+          "file": "licenser-macos-x64",
+          "sha256": "7e5e41fb437c3bd9689e1ddad6c7ab68b3d6b17e7261438bf8985e0ed9951e19"
+        },
+        "windows-x64": {
+          "file": "licenser-windows-x64.exe",
+          "sha256": "a3d7a56d45b4a4d57c4919b5778bcc7d46b8afe381d73476f92107217a40b75d"
+        }
+      }
+    },
+    "recovery": {
+      "description": "",
+      "runtime": "native",
+      "version": "2.0.4",
+      "base": "https://github.com/oxrion/protection-releases/releases/download/v2.0.4",
+      "artifacts": {
+        "linux-x64": {
+          "file": "recovery-linux-x64",
+          "sha256": "8076e1150730bf615e96388fe6e8c1cf48ff6c25cfdd6a660b6bc73936b877de"
+        },
+        "macos-arm64": {
+          "file": "recovery-macos-arm64",
+          "sha256": "0d8c58bfebbb231e087ce33e34d5ece2fd7d5733fdf7c2368a077f1bf92fa576"
+        },
+        "macos-x64": {
+          "file": "recovery-macos-x64",
+          "sha256": "0f08cc557860938756b6ad3479ee341bdb2e0cc48a6e7a80ca18428cc5365d38"
+        },
+        "windows-x64": {
+          "file": "recovery-windows-x64.exe",
+          "sha256": "8567784c2ff9eb502e7292ad0e0a805c73328e9796f85381b3f7b9fe48a3901a"
+        }
+      }
+    }
+  },
+  "signature": null
+}
