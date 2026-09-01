@@ -8,8 +8,8 @@
     "licenser": {
       "description": "",
       "runtime": "native",
-      "version": "2.1.4",
-      "base": "https://github.com/oxrion/protection-releases/releases/download/v2.1.4",
+      "version": "2.1.5",
+      "base": "https://github.com/oxrion/protection-releases/releases/download/v2.1.5",
       "artifacts": {
         "linux-x64": {
           "file": "licenser-linux-x64",
@@ -32,8 +32,8 @@
     "recovery": {
       "description": "",
       "runtime": "native",
-      "version": "2.1.4",
-      "base": "https://github.com/oxrion/protection-releases/releases/download/v2.1.4",
+      "version": "2.1.5",
+      "base": "https://github.com/oxrion/protection-releases/releases/download/v2.1.5",
       "artifacts": {
         "linux-x64": {
           "file": "recovery-linux-x64",
