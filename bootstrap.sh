@@ -9,7 +9,8 @@
 # deliberately dumb — it fetches one binary, drops it in ~/.oxrion/bin, and puts
 # that dir on PATH. Everything else is the dispatcher's job.
 #
-# It is idempotent: re-running it just reinstalls the latest dispatcher.
+# It is idempotent: re-running it just reinstalls the latest dispatcher. After
+# that, "oxrion self update" keeps it current.
 set -eu
 
 REPO="oxrion/dispatcher-releases"
@@ -80,9 +81,28 @@ if [ ! -s "$tmp" ]; then
   die "Downloaded file is empty. The release may be missing $asset."
 fi
 
+# --- verify against the release's SHA256SUMS --------------------------------
+# The same checksums "oxrion self update" and every tool download are checked
+# against. A file that doesn't match is never installed.
+sums="$(mktemp "${BIN_DIR}/.sums.XXXXXX")" || die "Could not create a temp file in $BIN_DIR."
+trap 'rm -f "$tmp" "$sums"' EXIT INT TERM
+fetch "${BASE}/SHA256SUMS" "$sums" || die "Could not download SHA256SUMS to check the download."
+want="$(awk -v f="$asset" '$2 == f || $2 == "*" f { print tolower($1); exit }' "$sums")"
+[ -n "$want" ] || die "SHA256SUMS lists no checksum for $asset."
+if command -v sha256sum >/dev/null 2>&1; then
+  got="$(sha256sum "$tmp" | awk '{print tolower($1)}')"
+elif command -v shasum >/dev/null 2>&1; then
+  got="$(shasum -a 256 "$tmp" | awk '{print tolower($1)}')"
+else
+  die "Neither sha256sum nor shasum is available to check the download."
+fi
+[ "$got" = "$want" ] || die "Checksum mismatch for $asset: the download is not the published file. Nothing was installed."
+rm -f "$sums"
+
 chmod +x "$tmp"
 mv -f "$tmp" "$DISPATCHER"
 trap - EXIT INT TERM
+rm -f "$sums"
 
 info "Installed: $DISPATCHER"
 

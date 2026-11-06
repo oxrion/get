@@ -5,7 +5,8 @@
 # Installs ONLY the `oxrion` dispatcher into %LOCALAPPDATA%\Oxrion\bin and puts
 # that folder on the user PATH. The dispatcher downloads the actual tools
 # (recovery, licenser, …) on first use by reading get.oxrion.com/manifest.json.
-# Idempotent: re-running reinstalls the latest dispatcher.
+# Idempotent: re-running reinstalls the latest dispatcher. After that,
+# "oxrion self update" keeps it current.
 
 $ErrorActionPreference = 'Stop'
 
@@ -35,9 +36,30 @@ try {
   throw "Download failed: $url`n$($_.Exception.Message)"
 }
 
-if (-not (Test-Path $tmp) -or (Get-Item $tmp).Length -eq 0) {
+if (-not (Test-Path $tmp) -or (Get-Item -Force $tmp).Length -eq 0) {
   Remove-Item $tmp -Force -ErrorAction SilentlyContinue
   throw "Downloaded file is empty. The release may be missing $asset."
+}
+
+# --- verify against the release's SHA256SUMS --------------------------------
+# The same checksums "oxrion self update" and every tool download are checked
+# against. A file that doesn't match is never installed.
+try {
+  $sums = (Invoke-WebRequest -Uri "$Base/SHA256SUMS" -UseBasicParsing).Content
+  if ($sums -is [byte[]]) { $sums = [System.Text.Encoding]::ASCII.GetString($sums) }
+} catch {
+  Remove-Item $tmp -Force -ErrorAction SilentlyContinue
+  throw "Could not download SHA256SUMS to check the download.`n$($_.Exception.Message)"
+}
+$want = $null
+foreach ($line in ($sums -split "`r?`n")) {
+  $parts = $line.Trim() -split '\s+', 2
+  if ($parts.Count -eq 2 -and $parts[1].TrimStart('*') -eq $asset) { $want = $parts[0].ToLower(); break }
+}
+$got = (Get-FileHash $tmp -Algorithm SHA256).Hash.ToLower()
+if (-not $want -or $got -ne $want) {
+  Remove-Item $tmp -Force -ErrorAction SilentlyContinue
+  throw "Checksum mismatch for ${asset}: the download is not the published file. Nothing was installed."
 }
 
 Move-Item -Force $tmp $Target

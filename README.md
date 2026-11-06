@@ -19,5 +19,8 @@ tool, the dispatcher reads `manifest.json` here and downloads the real tool
 - `vercel.json`   — routing (`/` → sh, `/win` → ps1) + content-types
 
 The dispatcher binaries themselves live in `oxrion/dispatcher-releases`; the
-bootstrap fetches the latest from there. This repo hosts only the install
-scripts and the manifest.
+bootstrap fetches the latest from there and checks it against that release's
+`SHA256SUMS` before installing. They are published by the `dispatcher`
+workflow in `oxrion/protection` (tag `dispatcher-vX.Y.Z`), which also records
+the dispatcher in `manifest.json` for `oxrion self update`. This repo hosts
+only the install scripts and the manifest; CI writes `manifest.json`.
