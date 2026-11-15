@@ -8,96 +8,96 @@
     "encoder": {
       "description": "",
       "runtime": "native",
-      "version": "6.1.3",
-      "base": "https://github.com/oxrion/protection-releases/releases/download/v6.1.3",
+      "version": "6.1.4",
+      "base": "https://github.com/oxrion/protection-releases/releases/download/v6.1.4",
       "artifacts": {
         "linux-x64": {
           "file": "encoder-linux-x64",
-          "sha256": "a92956baa65df4f655dea46a5347c9bb8c3324618e082f0fb561ba01633b139f"
+          "sha256": "886c86665b6f0c9d24f82e8f558e741125feb66e780967a836397fcf409f6ccb"
         },
         "macos-arm64": {
           "file": "encoder-macos-arm64",
-          "sha256": "f043562bf14750889e04aa04beaac3c08180c22cc244b5eab12eba7f69c002ce"
+          "sha256": "19fbdad475e59cb97c0474a549ba137668383ad9e139c321a76f12a1b9c808f1"
         },
         "macos-x64": {
           "file": "encoder-macos-x64",
-          "sha256": "fd11ebf280d4859a5316230c6ae524a7577dc34c970e446e9e08c09e735c2dd2"
+          "sha256": "8773c13ca696dc9d2dffd6f5a811d739301d49c32b4646d59465f6176eefe2f9"
         },
         "windows-x64": {
           "file": "encoder-windows-x64.exe",
-          "sha256": "148cb195909d099d579f7df32645d1e077480abebbdbdfba5c8df52dcdae8afb"
+          "sha256": "11316c72d121f48267afc6d1f7fa93be55bde98cffab411880e87725710db28f"
         }
       }
     },
     "keygen": {
       "description": "",
       "runtime": "native",
-      "version": "6.1.3",
-      "base": "https://github.com/oxrion/protection-releases/releases/download/v6.1.3",
+      "version": "6.1.4",
+      "base": "https://github.com/oxrion/protection-releases/releases/download/v6.1.4",
       "artifacts": {
         "linux-x64": {
           "file": "keygen-linux-x64",
-          "sha256": "14010c9c74d2a89bccf13d25b8c276548bf030c86e4a2c227b81691b1fcae082"
+          "sha256": "42b40a610ab5f3b347e9f142e4786acfe1ca2a41b9a5729c5b69f8e7391ea2cf"
         },
         "macos-arm64": {
           "file": "keygen-macos-arm64",
-          "sha256": "98d59f32916f532859cbc6c711a5e23544a15ce00fd7e9b837e691965f86f00f"
+          "sha256": "a158cea0eed357ebb4858bdf726158ce4a17caa76a7f30e65ef805749429c9a8"
         },
         "macos-x64": {
           "file": "keygen-macos-x64",
-          "sha256": "9248a1e2ccf08c6eb9d5d1b3caaf3f8545713f39f0578f1c37c5b5cc9c9ac895"
+          "sha256": "35a92209083488923ab30dfc77f33b2037d49307cea65f071bfdaa8dbc768619"
         },
         "windows-x64": {
           "file": "keygen-windows-x64.exe",
-          "sha256": "03713a17928154d7c241c9ed333bec8dd1d938625bd0083a04155653048337f4"
+          "sha256": "276150a7edf65a3d6ef1c61e1c8e43e9d2f17cf1a72ea8b1397c9c86e003f0df"
         }
       }
     },
     "licenser": {
       "description": "",
       "runtime": "native",
-      "version": "6.1.3",
-      "base": "https://github.com/oxrion/protection-releases/releases/download/v6.1.3",
+      "version": "6.1.4",
+      "base": "https://github.com/oxrion/protection-releases/releases/download/v6.1.4",
       "artifacts": {
         "linux-x64": {
           "file": "licenser-linux-x64",
-          "sha256": "445752c159996c28feb44c2ad38638312e4f347eb89e9c1667200c6adbb67a17"
+          "sha256": "f791f28396ad70f15d55132edc4d35ac6112108e9167a68f8c7027745f339f16"
         },
         "macos-arm64": {
           "file": "licenser-macos-arm64",
-          "sha256": "00a004ce1810fcbbfd8d962c01d20f42e5d31965f67146126c71ecb8753f84bf"
+          "sha256": "851e97c7810f27137b3cfa3f2a06fcf204e2e8573a050feded464ccd4952f009"
         },
         "macos-x64": {
           "file": "licenser-macos-x64",
-          "sha256": "f985a77f36e791a83a678de92ed0d89e2b6056a232788075cb982effdd38b4ee"
+          "sha256": "ae86baa6ecb1a3137c75343ee42014581ea3c9e5059a908d2aa385860fe745fb"
         },
         "windows-x64": {
           "file": "licenser-windows-x64.exe",
-          "sha256": "5968a979f3b2bbccf3e62a1b9ed9d06bf68ef847bd4a88e213819f9b3d8f4ab3"
+          "sha256": "24687b43bf87066dc00a515de1e09bd4b5188cf40f173567c097b4d4ffdaeee2"
         }
       }
     },
     "recovery": {
       "description": "",
       "runtime": "native",
-      "version": "6.1.3",
-      "base": "https://github.com/oxrion/protection-releases/releases/download/v6.1.3",
+      "version": "6.1.4",
+      "base": "https://github.com/oxrion/protection-releases/releases/download/v6.1.4",
       "artifacts": {
         "linux-x64": {
           "file": "recovery-linux-x64",
-          "sha256": "2611e5f2e46f61f7a5fdf50679e1d97f311b25d97dd99f3000d607d660d7f2f7"
+          "sha256": "0eddfe7d16a5afcb47d18ae22d618646471d0c420851dfdc3af527964cf26a3e"
         },
         "macos-arm64": {
           "file": "recovery-macos-arm64",
-          "sha256": "bae85093004d7da3e22f8062afe20f038b7c9fb218eed0c6c92c147cf9e20959"
+          "sha256": "0a35ef9e2babce5f5b955a5597aba97335fd1f916836632f95b24810d2fb76d6"
         },
         "macos-x64": {
           "file": "recovery-macos-x64",
-          "sha256": "a55388f2891e5f2575d7b30c77d95508f3e1264ac20bd8b9e35debcca2f7e827"
+          "sha256": "876e1e4b8a266a17c57d5ab92a82c87bb508c2b2f25329647412497dbf010d77"
         },
         "windows-x64": {
           "file": "recovery-windows-x64.exe",
-          "sha256": "f1ec1144354c9775773710a57e117304589946d595908c8ec87df99e657118af"
+          "sha256": "b4032a9cfae85a02ba7f02b374a3a3be61f5744e37a52f38569795468fab56d7"
         }
       }
     }
